@@ -1,23 +1,21 @@
-# Bullet Journal Planning System
+# Budget Tracker
 
 ## Program Intentions and Usage
 
-For my project I want to create a planning system for **students and workers**. 
-Over the last couple of years I have grown to enjoy bullet journaling, which is basically like creating your own planner 
-from scratch. Each month I design monthly spreads and weekly spreads, which usually consists of a calendar to write my 
-due dates and space for each week, where I can write my homework for the day. In these spreads I have also been able to 
-incorporate some creativity by adding themes for the month, such as a firework theme for the month of January. Since
-coming to uni, my bullet journal has significantly helped me reduce my stress while simultaneously helping me to stay on
-track with my assignments and tests. 
+For my project I want to create a budget tracking system for **students and workers**. 
+Since coming to university and having to keep track of my own expenses, I have learned how quickly things can add up
+and often find myself wondering how much I have spent throughout the month. For a while I have been wanting to start 
+writing it down, but I thought that this would be a good tool to create so that students like me, as well as workers
+can have a place to keep track.
 
-For simplicity in this I am focusing more on the structure of the calendar and weekly spreads instead of the decoration. 
-However, I also think that making the graphics more minimalistic could make this more practical and marketable for a 
-larger audience since some prefer to have more room for planning, instead of designs and drawings. I may make an option
-to add some simple preset designs to add to the spreads for those who choose. This program will allow the user to create
-monthly and weekly spreads, in which they can enter due dates and create to-do lists as well as add reminders. A more 
-specific usage of this program could include a student creating a schedule to study for their finals, including what
-they need to review leading up to the exam. 
+The application will allow users to create a tracker for each month, where they can input when they spent their money,
+on what they spent it, and how much it costed. They will also be able to input any earnings they have, and at the at end
+of their entries they could get an expense total that will add up the expenses and earnings. After the entries the user
+will be able to produce a graphical table displaying all of this information in an organized manner. 
+
 
 ## User Stories
-- As a user, I want to be able to add a task to my to-do list for a day of the week.
-- As a user, I want to be able to create a calendar for the month and add due dates.
+- As a user, I want to be able to add a monthly expense table to my collection.
+- As a user, I want to be able to be able to view a list of months for which I have tracked expenses.
+- As a user, I want to be able to select a tracker and get how much my net expenses and earnings are.
+- AS a user, I want to be able to select a month in my collection and view the detailed expenses and earnings. 
