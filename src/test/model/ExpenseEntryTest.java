@@ -17,21 +17,21 @@ class ExpenseEntryTest {
 
     @BeforeEach
     void runBefore(){
-        testE1 = new ExpenseEntry( 10082022, "Groceries", 128);
-        testE2 = new ExpenseEntry(21082022, "Hollister", 54);
+        testE1 = new ExpenseEntry( "10/08/2022", "Groceries", 128);
+        testE2 = new ExpenseEntry("21/08/2022", "Hollister", 54);
         testExpenses1 = new ExpenseEntryList(new ArrayList<>());
     }
 
     @Test
     void testConstructorExpenseEntry() {
-        assertEquals(10082022, testE1.getDate());
+        assertEquals("10/08/2022", testE1.getDate());
         assertEquals("Groceries", testE1.getLabel());
         assertEquals(128, testE1.getAmount());
 
     }
 
     @Test
-    void testConstructorMonthly() {
+    void testConstructorExpenseEntryList() {
         assertTrue(testExpenses1.getExpenseHistory().isEmpty());
     }
 
@@ -60,5 +60,25 @@ class ExpenseEntryTest {
         assertEquals(182, testExpenses1.totalExpenses());
     }
 
+
+    @Test
+    void testRemoveExpense() {
+        testExpenses1.addExpenseEntry(testE1);
+        testExpenses1.addExpenseEntry(testE2);
+        testExpenses1.removeExpenseEntry("Groceries");
+        assertFalse(testExpenses1.getExpenseHistory().contains(testE1));
+        assertEquals(1, testExpenses1.getExpenseHistoryLength());
+    }
+
+    @Test
+    void testRemoveMultipleExpenses() {
+        testExpenses1.addExpenseEntry(testE1);
+        testExpenses1.addExpenseEntry(testE2);
+        testExpenses1.removeExpenseEntry("Groceries");
+        testExpenses1.removeExpenseEntry("Hollister");
+        assertFalse(testExpenses1.getExpenseHistory().contains(testE1));
+        assertFalse(testExpenses1.getExpenseHistory().contains(testE2));
+        assertEquals(0, testExpenses1.getExpenseHistoryLength());
+    }
 
 }
