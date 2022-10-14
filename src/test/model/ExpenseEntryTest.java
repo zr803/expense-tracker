@@ -13,21 +13,48 @@ class ExpenseEntryTest {
     private ExpenseEntryList testExpenses1;
     private ExpenseEntry testE1;
     private ExpenseEntry testE2;
+    private ExpenseEntry testE3;
 
 
     @BeforeEach
     void runBefore(){
         testE1 = new ExpenseEntry( "10/08/2022", "Groceries", 128);
         testE2 = new ExpenseEntry("21/08/2022", "Hollister", 54);
+        testE3 = new ExpenseEntry();
         testExpenses1 = new ExpenseEntryList(new ArrayList<>());
     }
 
     @Test
-    void testConstructorExpenseEntry() {
+    void testConstructorExpenseEntryWithParameters() {
         assertEquals("10/08/2022", testE1.getDate());
         assertEquals("Groceries", testE1.getLabel());
         assertEquals(128, testE1.getAmount());
 
+    }
+
+    @Test
+    void testConstructorExpenseEntryNoParameters() {
+        assertEquals(null, testE3.getDate());
+        assertEquals(null, testE3.getLabel());
+        assertEquals(0, testE3.getAmount());
+    }
+
+    @Test
+    void testSetDate() {
+        testE3.setDate("20/08/2022");
+        assertEquals("20/08/2022", testE3.getDate());
+    }
+
+    @Test
+    void testSetLabel() {
+        testE3.setLabel("Skincare");
+        assertEquals("Skincare", testE3.getLabel());
+    }
+
+    @Test
+    void testSetAmount() {
+        testE3.setAmount(20.25);
+        assertEquals(20.25, testE3.getAmount());
     }
 
     @Test
@@ -59,7 +86,6 @@ class ExpenseEntryTest {
         testExpenses1.addExpenseEntry(testE2);
         assertEquals(182, testExpenses1.totalExpenses());
     }
-
 
     @Test
     void testRemoveExpense() {
