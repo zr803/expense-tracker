@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // Expense tracker application
-// modeled after AccountNotRobust application.
+// modeled command processing after AccountNotRobust application.
 public class ExpenseTracker {
     private ExpenseEntryList entries;
     private Scanner input;
@@ -98,7 +98,7 @@ public class ExpenseTracker {
         for (i = 0; i < entries.getExpenseHistoryLength(); i++) {
             System.out.println(" " + entries.getExpenseHistory().get(i).getDate() + ", "
                     + entries.getExpenseHistory().get(i).getLabel() + ", "
-                    + entries.getExpenseHistory().get(i).getAmount() + "");
+                    + entries.getExpenseHistory().get(i).getAmount() + "\n");
         }
 
     }
@@ -113,13 +113,13 @@ public class ExpenseTracker {
         if (entries.getExpenseHistoryLength() == lengthInitial) {
             System.out.println("Entry not found");
         } else {
-            System.out.println("Success! The entry has been removed.");
+            System.out.println("Success! The entry has been removed.\n");
         }
     }
 
     // EFFECTS: adds up a total of the expenses in the list of entries.
     private void doExpenseTotal() {
-        System.out.println("Your total expenses are " + entries.totalExpenses());
+        System.out.println("Your total expenses are " + entries.totalExpenses() + "\n");
     }
 
 
