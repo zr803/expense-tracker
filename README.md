@@ -15,7 +15,7 @@ will be able to produce a graphical table displaying all of this information in 
 
 
 ## User Stories
-- As a user, I want to be able to multiple expenses to my tracker.
+- As a user, I want to be able to add multiple expenses to my tracker.
 - As a user, I want to be able to be able to view a list of expenses for which I have recorded.
 - As a user, I want to be able to select a tracker and get how much my net expenses are.
 - AS a user, I want to be able to remove an entry from the tracker once I have paid the expense off. 

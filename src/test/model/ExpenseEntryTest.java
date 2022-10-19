@@ -107,4 +107,13 @@ class ExpenseEntryTest {
         assertEquals(0, testExpenses1.getExpenseHistoryLength());
     }
 
+    @Test
+    void testRemoveExpenseNotFound() {
+        testExpenses1.addExpenseEntry(testE1);
+        assertEquals(1, testExpenses1.getExpenseHistoryLength());
+        testExpenses1.removeExpenseEntry("Skincare");
+        assertEquals(1, testExpenses1.getExpenseHistoryLength());
+        assertTrue(testExpenses1.getExpenseHistory().contains(testE1));
+    }
+
 }
