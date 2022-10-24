@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 // represents a list of expenses.
@@ -49,5 +52,23 @@ public class ExpenseEntryList {
             }
         }
     }
+
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("expenses", expensesToJson());
+        return json;
+    }
+
+    private JSONArray expensesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (ExpenseEntry e: expenses) {
+            jsonArray.put(e.toJson());
+        }
+
+        return jsonArray;
+    }
+
 
 }

@@ -1,0 +1,14 @@
+{
+  "expenses": [
+    {
+      "date": "10/08/2022",
+      "label": "groceries",
+      "amount": 53.25
+    },
+    {
+      "date": "16/08/2022",
+      "label": "skincare",
+      "amount": 74.23
+    }
+  ]
+}

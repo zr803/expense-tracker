@@ -1,6 +1,8 @@
 package model;
 
 
+import org.json.JSONObject;
+
 // represents an entry describing the details of spending, including the date, a description, and amount.
 public class ExpenseEntry {
     private String date;            // represents the date the entry is for, in the form DDMMYYY.
@@ -42,6 +44,15 @@ public class ExpenseEntry {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("date", date);
+        json.put("label", label);
+        json.put("amount", amount);
+        return json;
     }
 
 
