@@ -2,9 +2,10 @@ package model;
 
 
 import org.json.JSONObject;
+import persistence.Writable;
 
 // represents an entry describing the details of spending, including the date, a description, and amount.
-public class ExpenseEntry {
+public class ExpenseEntry implements Writable {
     private String date;            // represents the date the entry is for, in the form DDMMYYY.
     private String label;           // description of how the money was spent/earned.
     private double amount;          // amount spent
@@ -19,7 +20,7 @@ public class ExpenseEntry {
     }
 
     // EFFECTS: constructs and entry without any parameters (to be set by the user).
-    public ExpenseEntry(){
+    public ExpenseEntry() {
     }
 
     public double getAmount() {
@@ -46,7 +47,8 @@ public class ExpenseEntry {
         this.date = date;
     }
 
-
+    @Override
+    // EFFECTS: writes an expense in the form of a json object.
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("date", date);

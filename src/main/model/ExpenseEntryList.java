@@ -2,11 +2,12 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import persistence.Writable;
 
 import java.util.ArrayList;
 
 // represents a list of expenses.
-public class ExpenseEntryList {
+public class ExpenseEntryList implements Writable {
     private final ArrayList<ExpenseEntry> expenses;
 
     // EFFECTS: creates a list of expenses.
@@ -54,12 +55,15 @@ public class ExpenseEntryList {
     }
 
 
+    @Override
+    // EFFECTS: writes expenses as json object.
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("expenses", expensesToJson());
         return json;
     }
 
+    // EFFECTS: converts each expense to json and creates array.
     private JSONArray expensesToJson() {
         JSONArray jsonArray = new JSONArray();
 
