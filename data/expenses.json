@@ -1,12 +1,17 @@
 {"expenses": [
     {
-        "date": "10/08/2022",
-        "amount": 103.35,
+        "date": "10/31/2022",
+        "amount": 20.35,
         "label": "groceries"
     },
     {
-        "date": "16/08/2022",
-        "amount": 27.35,
+        "date": "10/08/2022",
+        "amount": 52.35,
         "label": "shopping"
+    },
+    {
+        "date": "11/21/2022",
+        "amount": 103.35,
+        "label": "clothes"
     }
 ]}
