@@ -29,7 +29,7 @@ public class ExpenseTrackerGUI extends JFrame {
         pack();
 
         setSize(new Dimension(WIDTH, HEIGHT));
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(null);
     }
 
@@ -45,28 +45,6 @@ public class ExpenseTrackerGUI extends JFrame {
         return menu;
     }
 
-    public JScrollPane expensePanel() {
-        JPanel entriesPanel = new JPanel();
-        entriesPanel.setLayout(new GridBagLayout());
-        entriesPanel.setOpaque(true);
-        entriesPanel.setBackground(Color.LIGHT_GRAY);
-        entriesPanel.setBorder(BorderFactory.createEmptyBorder(GAP, GAP, GAP, GAP));
-
-        String[] columnLabels = {
-                "Date",
-                "Label",
-                "Amount"
-        };
-
-        Object[][] data = {
-                {"10/08/2022", "groceries", 103.23}
-        };
-
-        JTable table = new JTable(data, columnLabels);
-        JScrollPane sp = new JScrollPane(table);
-
-        return sp;
-    }
 
     private JPanel controlPanel() {
         controls = new JPanel();
