@@ -1,1 +1,12 @@
-{"expenses": []}
+{"expenses": [
+    {
+        "date": "10/08/2022",
+        "amount": 62.35,
+        "label": "groceries"
+    },
+    {
+        "date": "10/12/2022",
+        "amount": 103.35,
+        "label": "clothes"
+    }
+]}

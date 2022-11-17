@@ -80,7 +80,7 @@ public class ExpenseEntryList implements Writable {
     private JSONArray expensesToJson() {
         JSONArray jsonArray = new JSONArray();
 
-        for (ExpenseEntry e: expenses) {
+        for (ExpenseEntry e : expenses) {
             jsonArray.put(e.toJson());
         }
 

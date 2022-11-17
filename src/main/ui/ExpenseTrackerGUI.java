@@ -40,7 +40,6 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
         setLayout(new BorderLayout(10, 2));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-        //setContentPane(new JLabel(new ImageIcon("C:\\Users\\ziyaa\\OneDrive\\Pictures\\backImage.jpg")));
         JPanel viewPanel = new JPanel();
         viewPanel.setLayout(new BoxLayout(viewPanel, BoxLayout.X_AXIS));
         entries = new ExpenseEntryList(new ArrayList<>());
@@ -88,7 +87,7 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
         controls.setBorder(BorderFactory.createEmptyBorder(GAP, GAP, GAP, GAP));
         JPanel image = new JPanel();
         JLabel img = new JLabel(new ImageIcon("C:\\Users\\ziyaa\\OneDrive\\Pictures\\logo5.jpg"));
-        img.setSize(new Dimension(15,20));
+        img.setSize(new Dimension(15, 20));
         image.add(img);
         controls.add(image);
         return controls;
@@ -104,7 +103,7 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
         entryPanel.setBackground(Color.LIGHT_GRAY);
         entryPanel.setLayout(new BoxLayout(entryPanel, BoxLayout.Y_AXIS));
         entryPanel.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createLineBorder(Color.BLACK,1), "Create a new entry", TitledBorder.LEFT,
+                BorderFactory.createLineBorder(Color.BLACK, 1), "Create a new entry", TitledBorder.LEFT,
                 TitledBorder.DEFAULT_POSITION));
 
         entryPanel.add(dateEntry());
@@ -167,14 +166,13 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
     // EFFECTS: constructs a JPanel with the interface to remove an expense entry.
     private JPanel removeEntryGUI() {
         JPanel removePanel = new JPanel();
-        //removePanel.setLayout(new FlowLayout(0, Y));
         JPanel removeEntry = new JPanel();
         removeEntry.setOpaque(true);
         removeEntry.setBackground(Color.LIGHT_GRAY);
         removeEntry.setLayout(new BoxLayout(removeEntry, BoxLayout.Y_AXIS));
         removeEntry.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         removeEntry.setBorder(BorderFactory.createTitledBorder(
-                BorderFactory.createLineBorder(Color.BLACK,1),
+                BorderFactory.createLineBorder(Color.BLACK, 1),
                 "Remove an entry",
                 TitledBorder.LEFT,
                 TitledBorder.DEFAULT_POSITION));
@@ -187,7 +185,6 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
         removeEntry.add(removeButton);
         removeEntry.add(Box.createRigidArea(new Dimension(0, 8)));
         removePanel.add(removeEntry);
-
 
         return removePanel;
     }

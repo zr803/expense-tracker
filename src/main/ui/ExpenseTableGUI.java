@@ -56,7 +56,7 @@ public class ExpenseTableGUI extends ScrollPane {
     public void openTable(ExpenseEntryList entries) {
         ArrayList<ExpenseEntry> history = entries.getExpenseHistory();
         Object[] rowData = new Object[3];
-        for (ExpenseEntry e: history) {
+        for (ExpenseEntry e : history) {
             rowData[0] = e.getDate();
             rowData[1] = e.getLabel();
             rowData[2] = e.getAmount();
