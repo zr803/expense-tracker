@@ -116,4 +116,19 @@ class ExpenseEntryTest {
         assertTrue(testExpenses1.getExpenseHistory().contains(testE1));
     }
 
+    @Test
+    void testExpenseEntryIndexFound() {
+        testExpenses1.addExpenseEntry(testE1);
+        testExpenses1.addExpenseEntry(testE2);
+        assertEquals(0, testExpenses1.expenseEntryIndex("Groceries"));
+        assertEquals(1, testExpenses1.expenseEntryIndex("Hollister"));
+    }
+
+    @Test
+    void testExpenseEntryIndexNotFound() {
+        testExpenses1.addExpenseEntry(testE1);
+        testExpenses1.addExpenseEntry(testE2);
+        assertEquals(-1, testExpenses1.expenseEntryIndex("Skincare"));
+    }
+
 }

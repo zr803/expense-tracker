@@ -54,6 +54,19 @@ public class ExpenseEntryList implements Writable {
         }
     }
 
+    // REQUIRES: there is at least one entry in the expenses.
+    // EFFECTS: searches the list for an entry with the given label, returns the index if found,
+    //          or -1 if no such entry exists.
+    public int expenseEntryIndex(String expenseLabel) {
+        int i;
+        for (i = 0; i < expenses.size(); i++) {
+            if (expenses.get(i).getLabel().equals(expenseLabel)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
     @Override
     // EFFECTS: writes expenses as json object.

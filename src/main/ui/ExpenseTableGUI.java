@@ -8,23 +8,15 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
+// JTable for the expenses to be displayed.
 public class ExpenseTableGUI extends ScrollPane {
     private JTable table;
     private DefaultTableModel model;
 
+    // MODIFIES: this
+    // EFFECTS: constructs a table and initializes the columns.
     public ExpenseTableGUI() {
         super();
-//        String[] columnLabels = {
-//                "Date",
-//                "Label",
-//                "Amount"
-//        };
-
-//        Object[][] data = {
-//                {"10/08/2022", "groceries", 103.23}
-//        };
-
-//        table = new JTable(data, columnLabels);
         model = new DefaultTableModel();
         table = new JTable(model);
         model.addColumn("Date");
@@ -34,7 +26,34 @@ public class ExpenseTableGUI extends ScrollPane {
         super.add(sp);
     }
 
-    public void addRowToTable(ExpenseEntryList entries) {
+    // REQUIRES: entry list is not empty.
+    // MODIFIES: this
+    // EFFECTS: creates a row from the expense entry, and adds it to the table.
+    public void addRowToTable(ExpenseEntry expense) {
+        Object[] rowData = new Object[3];
+        rowData[0] = expense.getDate();
+        rowData[1] = expense.getLabel();
+        rowData[2] = expense.getAmount();
+        model.addRow(rowData);
+        model.fireTableDataChanged();
+
+    }
+
+    // REQUIRES: entry list is not empty.
+    // MODIFIES: this
+    // EFFECTS: checks if a row with the label exists, and removes it if found.
+    public void removeEntryFromTable(ExpenseEntryList entries, String label) {
+        if (entries.expenseEntryIndex(label) == -1) {
+            model.fireTableDataChanged();
+        } else {
+            model.removeRow(entries.expenseEntryIndex(label));
+            model.fireTableDataChanged();
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: takes entries and creates a row in the table for each entry.
+    public void openTable(ExpenseEntryList entries) {
         ArrayList<ExpenseEntry> history = entries.getExpenseHistory();
         Object[] rowData = new Object[3];
         for (ExpenseEntry e: history) {
@@ -44,7 +63,6 @@ public class ExpenseTableGUI extends ScrollPane {
             model.addRow(rowData);
         }
         model.fireTableDataChanged();
-
     }
 
 }
