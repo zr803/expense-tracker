@@ -1,6 +1,8 @@
 package ui;
 
 
+import model.Event;
+import model.EventLog;
 import model.ExpenseEntry;
 import model.ExpenseEntryList;
 import persistence.JsonReader;
@@ -9,8 +11,7 @@ import persistence.JsonWriter;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
     public ExpenseTrackerGUI() {
         super("Expense Tracker");
         setLayout(new BorderLayout(10, 2));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setCloseFunction();
         setVisible(true);
         JPanel viewPanel = new JPanel();
         viewPanel.setLayout(new BoxLayout(viewPanel, BoxLayout.X_AXIS));
@@ -264,6 +265,22 @@ public class ExpenseTrackerGUI extends JFrame implements ActionListener {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to file: " + JSON_STORE);
         }
+    }
+
+    private void setCloseFunction() {
+        super.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        WindowListener exitListener = new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                EventLog events = EventLog.getInstance();
+                for (Event ev : events) {
+                    System.out.println(ev.toString());
+                }
+                System.exit(0);
+            }
+        };
+
+        super.addWindowListener(exitListener);
     }
 
 }

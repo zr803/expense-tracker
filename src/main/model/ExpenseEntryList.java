@@ -27,6 +27,7 @@ public class ExpenseEntryList implements Writable {
     // EFFECTS: adds an expense to the list of entries.
     public void addExpenseEntry(ExpenseEntry expenseEntry) {
         expenses.add(expenseEntry);
+        EventLog.getInstance().logEvent(new Event("A new entry has been added to your expenses."));
     }
 
     // REQUIRES: list of expenses is not empty.
@@ -52,6 +53,7 @@ public class ExpenseEntryList implements Writable {
                 expenses.remove(i);
             }
         }
+        EventLog.getInstance().logEvent(new Event("An entry has been removed from your expenses."));
     }
 
     // REQUIRES: there is at least one entry in the expenses.

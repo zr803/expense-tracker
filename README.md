@@ -31,3 +31,16 @@ will be able to produce a graphical table displaying all of this information in 
   the application.
 - You can save the state of my application by clicking File -> Save on the menu at the top of the window.
 - You can reload the state of my application by clicking File -> Open on the menu at the top of the window.
+
+## Phase 4: Task 2
+Here is what was printed when I ran my GUI and added a couple of entries and removed a couple before closing the window:
+
+A new entry has been added to your expenses. \
+Wed Nov 23 10:31:38 PST 2022 \
+A new entry has been added to your expenses. \
+Wed Nov 23 10:31:49 PST 2022 \
+An entry has been removed from your expenses. \
+Wed Nov 23 10:32:30 PST 2022 \
+A new entry has been added to your expenses. \
+Wed Nov 23 10:33:03 PST 2022 \
+An entry has been removed from your expenses.

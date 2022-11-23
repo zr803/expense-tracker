@@ -4,9 +4,10 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
+
 // represents an entry describing the details of spending, including the date, a description, and amount.
 public class ExpenseEntry implements Writable {
-    private String date;            // represents the date the entry is for, in the form DDMMYYY.
+    private String date;            // represents the date the entry is for, in the form DD/MM/YYYY.
     private String label;           // description of how the money was spent/earned.
     private double amount;          // amount spent
 

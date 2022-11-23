@@ -8,5 +8,15 @@
         "date": "10/12/2022",
         "amount": 103.35,
         "label": "clothes"
+    },
+    {
+        "date": "11/01/2022",
+        "amount": 200.23,
+        "label": "walmart"
+    },
+    {
+        "date": "11/02/2022",
+        "amount": 24.35,
+        "label": "food"
     }
 ]}
