@@ -44,3 +44,19 @@ Wed Nov 23 10:32:30 PST 2022 \
 A new entry has been added to your expenses. \
 Wed Nov 23 10:33:03 PST 2022 \
 An entry has been removed from your expenses.
+
+## Phase 4: Task 3
+While it may not be noticeable in my UML diagram, the cohesion could be improved since there are multiple
+responsibilities in the ExpenseTrackerGUI class. For example the class is responsible for adding and removing 
+entries to the display as well as constructs the overall display, so there are a lot of lines of code. So some changes I
+could make may include...
+- Creating a class for persistence related tasks in the GUI, that is a class responsible for saving and loading the 
+  state of the display.
+- Creating separate classes for removing and adding entries to the display. This may include, for example, creating a
+  class responsible for the display panel where you create an entry, and another responsible for adding the entry to the
+  GUI.
+
+Furthermore, in my GUI where I create the display, there are some lines of code that are very similar to each other, as 
+they use the same layouts or create rigid areas between components that are the same size. To improve this I could 
+create methods to cut down the duplicate code and improve the single point of control in case I want to change anything
+in the future, like making the gaps bigger.
