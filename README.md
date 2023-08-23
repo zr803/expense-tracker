@@ -11,7 +11,7 @@ can have a place to keep track.
 The application will allow users to create a tracker for their expenses, where they can input when they spent their 
 money, on what they spent it, and how much it costed. They will also be able to get a total of their expenses and remove
 an entry as well, which could be useful if they have paid that expense off. After the entries have been added the user 
-will be able to produce a graphical table displaying all of this information in an organized manner. 
+will be able to produce a graphical table displaying all of this information in an organized manner.
 
 
 ## User Stories
